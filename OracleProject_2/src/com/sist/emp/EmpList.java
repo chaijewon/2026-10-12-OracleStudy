@@ -3,6 +3,10 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 //empno,ename,job,hiredate,deptno
+// => Group By / Having / JOIN / SubQuery 
+// => DDL => DML 
+// View / Sequence / 시노님 / Index / PL/SQL
+// 요구사항 분석 / 트랜잭션 / 보안 
 public class EmpList extends JPanel{
    JTable table;
    JComboBox<Integer> box;

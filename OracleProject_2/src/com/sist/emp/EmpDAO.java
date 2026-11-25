@@ -10,7 +10,15 @@ public class EmpDAO {
    private static EmpDAO dao;
    // URL 
    private final String URL="jdbc:oracle:thin:@localhost:1521:XE";
-   
+   /*
+    *   오라클에서 지원하는 함수 
+    *   => SUBSTR() / COUNT() / TO_CHAR() 
+    *   => AVG() / SUM() 
+    *   => SYSDATE 
+    *   => RANK
+    *   
+    *   => 비교연산자 / BETWEEN / IN / NULL / LIKE 
+    */
    // 1. 드라이버 설정  == 한번 설정 (생성자)
    public EmpDAO()
    {

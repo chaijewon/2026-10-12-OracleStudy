@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 public class UserMain extends JFrame implements ActionListener{
     CardLayout card=new CardLayout();
     Login login=new Login();
@@ -65,6 +66,19 @@ public class UserMain extends JFrame implements ActionListener{
 			else
 			{
 				JOptionPane.showMessageDialog(this, "로그인 되었습니다");
+				List<EmpVO> list=
+						   dao.empAllData();
+				for(EmpVO vo:list)
+				{
+					String[] data= {
+						String.valueOf(vo.getEmpno()),
+						vo.getEname(),
+						vo.getJob(),
+						vo.getHiredate().toString(),
+						String.valueOf(vo.getDeptno())
+					};
+					eList.model.addRow(data);
+				}
 				card.show(getContentPane(), "LIST");
 				
 			}
