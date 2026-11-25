@@ -57,9 +57,25 @@ public class EmpDAO {
 		   // 1. 연결 
 		   getConnection();
 		   // 2. SQL문장 
+		   String sql="SELECT empno,ename,job,hiredate,deptno "
+				     +"FROM emp "
+				     +"ORDER BY hiredate";
 		   // 3. 오라클 전송 
+		   ps=conn.prepareStatement(sql);
 		   // 4. 결과값 받기 
+		   ResultSet rs=ps.executeQuery();
 		   // 5. List에 추가 
+		   while(rs.next())
+		   {
+			   EmpVO vo=new EmpVO();
+			   vo.setEmpno(rs.getInt(1));
+			   vo.setEname(rs.getString(2));
+			   vo.setJob(rs.getString(3));
+			   vo.setHiredate(rs.getDate(4));
+			   vo.setDeptno(rs.getInt(5));
+			   list.add(vo);
+		   }
+		   rs.close();
 	   }catch(Exception ex)
 	   {
 		   ex.printStackTrace();
