@@ -138,10 +138,43 @@ public class BookDAO {
 		}
 	}
 	
+	
+	public void find()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.print("책 제목:");
+		String name=scan.next();
+		try
+		{
+			getConnection();
+			String sql="SELECT bookname,publisher "
+					  +"FROM book "
+					  +"WHERE bookname LIKE '%'||?||'%'";
+			ps=conn.prepareStatement(sql);
+			// ? 에 값을 채운다 
+			ps.setString(1, name);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next())
+			{
+				System.out.println(rs.getString(1)+" "
+						+rs.getString(2));
+			}
+			rs.close();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			disConnection();
+		}
+	}
+	
 	public static void main(String[] args) {
 		BookDAO dao=
 				new BookDAO();
-		dao.bookAllData();
+		//dao.bookAllData();
+		dao.find();
 	}
 	
 }
