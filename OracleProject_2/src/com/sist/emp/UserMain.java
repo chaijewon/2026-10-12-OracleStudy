@@ -4,11 +4,13 @@ import java.awt.*;
 public class UserMain extends JFrame{
     CardLayout card=new CardLayout();
     Login login=new Login();
+    EmpList eList=new EmpList();
     public UserMain()
     {
     	setLayout(card);
-    	add("LOGIN",login);
     	
+    	add("LOGIN",login);
+    	add("LIST",eList);
     	setSize(640, 480);
     	setVisible(true);
     	setDefaultCloseOperation(EXIT_ON_CLOSE);
