@@ -38,6 +38,20 @@ public class UserMain {
         					+vo.getSal());
         		}
         	}
+        	else if(menu==2)
+        	{
+        		System.out.print("이름 입력:");
+        		String name=scan.next();
+        		List<EmpVO> list=dao.empFindData(name);
+        		for(EmpVO vo:list)
+        		{
+        			System.out.println(vo.getEmpno()+" "
+        					+vo.getEname()+" "
+        					+vo.getJob()+" "
+        					+vo.getHiredate().toString()+" "
+        					+vo.getSal());
+        		}
+        	}
         }
 	}
 
