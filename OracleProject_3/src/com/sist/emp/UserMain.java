@@ -1,5 +1,11 @@
 package com.sist.emp;
 import java.util.*;
+// 1. 내장 함수 정리 209page ~ 221page 
+// 2. Group By 정리 157page ~ 162page 
+// 3. Having 정리 
+// 시간 => 자바 정리 : 클래스 , 객체 , 메소드 , 메소드 호출 ...
+// => JOIN (INNER , OUTER JOIN) 
+
 public class UserMain {
 
 	public static void main(String[] args) {
